@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "中国数字时代 (CDT-Chinese)",
   "short_name": "CDTChinese",
-  "version": "0.0.5",
+  "version": "0.0.6",
   
   "description": "免翻墙访问中国数字时代中文网站",
   "icons": {
@@ -13,7 +13,7 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "*://ajax.aspnetcdn.com/*",
+    "*://swx.cdn.skype.com/*",
     "*://az844805.vo.msecnd.net/*"
   ],
     

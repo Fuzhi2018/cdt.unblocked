@@ -1,7 +1,7 @@
 {
   "title": "中国数字时代 (CDT-Chinese)",
   "name": "cdtunblocked",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "免翻墙访问中国数字时代中文网站",
   "main": "index.js",
   "author": "cdt.mirrors@gmail.com",

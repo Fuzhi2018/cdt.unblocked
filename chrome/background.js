@@ -1,4 +1,4 @@
-var tag = "#chinadigitaltimes"
+var tag = "#chinadigitaltimes";
 
 chrome.browserAction.onClicked.addListener(function() {
 	chrome.tabs.create({
@@ -9,7 +9,7 @@ chrome.browserAction.onClicked.addListener(function() {
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 	return {
 		redirectUrl : details.url.replace("az844805.vo.msecnd.net",
-				"ajax.aspnetcdn.com")
+				"swx.cdn.skype.com")
 				+ tag
 	};
 }, {
@@ -34,5 +34,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
 		requestHeaders : headers
 	};
 }, {
-	urls : [ "*://ajax.aspnetcdn.com/*" ]
+	urls : [ "*://swx.cdn.skype.com/*" ]
 }, [ 'requestHeaders', 'blocking' ]);

@@ -19,7 +19,7 @@ function handleClick(state) {
 
 Cu.import('resource://gre/modules/Services.jsm');
 var redirectPattern = new RegExp('^(http|https):\/\/az844805\.vo\.msecnd\.net\.*');
-var frontingPattern = new RegExp('^(http|https):\/\/ajax\.aspnetcdn\.com\.*');
+var frontingPattern = new RegExp('^(http|https):\/\/swx\.cdn\.skype\.com\.*');
 var httpRequestObserver = {	
 	observe : function(subject, topic, data) {
 		if (topic == "http-on-modify-request") {
@@ -28,7 +28,7 @@ var httpRequestObserver = {
 
 			if (redirectPattern.test(requestURL)) {
 				var newRequestURL = requestURL.replace("az844805.vo.msecnd.net",
-						"ajax.aspnetcdn.com") + tag;
+						"swx.cdn.skype.com") + tag;
 				httpChannel.redirectTo(Services.io.newURI(newRequestURL, null, null));
 			} else if (frontingPattern.test(requestURL)) {
 				if (requestURL.indexOf(tag, requestURL.length - tag.length) !== -1) {
