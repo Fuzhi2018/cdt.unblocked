@@ -9,7 +9,7 @@ chrome.browserAction.onClicked.addListener(function() {
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 	return {
 		redirectUrl : details.url.replace("az844805.vo.msecnd.net",
-				"swx.cdn.skype.com")
+				"ajax.aspnetcdn.com")
 				+ tag
 	};
 }, {
@@ -34,5 +34,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
 		requestHeaders : headers
 	};
 }, {
-	urls : [ "*://swx.cdn.skype.com/*" ]
+	urls : [ "*://ajax.aspnetcdn.com/*" ]
 }, [ 'requestHeaders', 'blocking' ]);
