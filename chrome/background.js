@@ -2,18 +2,18 @@ var tag = "#chinadigitaltimes";
 
 chrome.browserAction.onClicked.addListener(function() {
 	chrome.tabs.create({
-		'url' : "https://az844805.vo.msecnd.net/chinese/"
+		'url' : "https://duycx87h4wztb.cloudfront.net/chinese/"
 	});
 });
 
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
 	return {
-		redirectUrl : details.url.replace("az844805.vo.msecnd.net",
-				"ajax.aspnetcdn.com")
+		redirectUrl : details.url.replace("duycx87h4wztb.cloudfront.net",
+				"a0.awsstatic.com")
 				+ tag
 	};
 }, {
-	urls : [ "*://az844805.vo.msecnd.net/*" ]
+	urls : [ "*://duycx87h4wztb.cloudfront.net/*" ]
 }, [ "blocking" ]);
 
 chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
@@ -22,7 +22,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
 	if (details.url.indexOf(tag, details.url.length - tag.length) !== -1) {
 		headers.push({
 			name : 'Host',
-			value : 'az844805.vo.msecnd.net'
+			value : 'duycx87h4wztb.cloudfront.net'
 		});
 	} else {
 		headers.push({
@@ -34,5 +34,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
 		requestHeaders : headers
 	};
 }, {
-	urls : [ "*://ajax.aspnetcdn.com/*" ]
+	urls : [ "*://a0.awsstatic.com/*" ]
 }, [ 'requestHeaders', 'blocking' ]);
